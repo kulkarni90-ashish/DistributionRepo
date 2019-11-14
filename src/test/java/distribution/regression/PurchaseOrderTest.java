@@ -9,10 +9,10 @@ import distribution.library.TestBase;
 import distribution.pages.LoginPage;
 import distribution.pages.PurchaseOrderPage;
 
-public class POCreation extends TestBase {
-	@DataProvider(name = "AccountDetails")
+public class PurchaseOrderTest extends TestBase {
+	@DataProvider(name = "POProductDetails")
 	public String[][] getAccountDetailsFromExcel() throws Exception {
-		String str[][] = AppLibrary.readExcel("TestData/CompanyDetails.xls");
+		String str[][] = AppLibrary.readExcel("TestData/POProductDetails.xls");
 		return str;
 	}
 
@@ -27,20 +27,15 @@ public class POCreation extends TestBase {
 		AppLibrary.sleep(4000);
 	}
 
-	@Test(dataProvider = "AccountDetails")
-	public void createCompany(String id, String companyName, String firstName, String licenseNumber, String lastName,
-			String entityTaxType, String phone, String vendorType, String licenceType, String companyType,
-			String website, String fax, String vendorAddress, String vendorCity, String vendorZipCode,
-			String vendorState, String exeIndicator) throws Exception {
-
+	@Test(dataProvider = "POProductDetails")
+	public void createPO(String id, String name, String quantity, String unitPrice, String companyName,
+			String licenseNumber, String term, String payType, String exeIndicator) throws Exception {
 		PurchaseOrderPage pop = new PurchaseOrderPage(appLibrary);
-
 		pop.navigateToPO(driver);
-		pop.createPO(driver, companyName, licenseNumber, "Net 30", "Cash", "11/06/2019", "11/08/2019",
-				"NC_Panda Key Box Battery", "10", "80");
+		String poNumber = pop.createPO(driver, companyName, licenseNumber, term, payType, AppLibrary.getDatePO(),
+				AppLibrary.getDatePO(), name, quantity, unitPrice);
 
-		pop.receivePO(driver);
-
+		pop.receivePO(driver, poNumber, companyName, licenseNumber, term, payType, AppLibrary.getDatePO(),
+				AppLibrary.getDatePO(), name, quantity, unitPrice);
 	}
-
 }

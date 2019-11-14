@@ -113,14 +113,14 @@ public class TestBase {
 			}
 		}
 
-//		appLibrary.getCurrentDriverInstance().close();
-//		appLibrary.getCurrentDriverInstance().quit();
+		// appLibrary.getCurrentDriverInstance().close();
+		// appLibrary.getCurrentDriverInstance().quit();
 
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void quitBrowser() {
-		appLibrary.closeBrowser();
+		driver.close();
 		Reporter.log("Closing the Browser Successfully", true);
 		System.out.println("Closing the Browser Successfully");
 		Reporter.log("</table>");

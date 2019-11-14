@@ -1225,6 +1225,16 @@ public class AppLibrary {
 		return dateFormat.format(date);
 	}
 
+	public static String getDatePO() {
+
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		System.out.println(dateFormat.format(date));
+		return dateFormat.format(date);
+	}
+	
+	
+
 	public static void waitUntilElementDisplayed(WebDriver driver, String locatorString) {
 
 		WebDriverWait wait = new WebDriverWait(driver, 40);

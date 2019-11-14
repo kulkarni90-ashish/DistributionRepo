@@ -29,12 +29,6 @@ public class InvoicePage {
 	public static String createManifestButton = "xpath://button[text()='Create Manifest']";
 	
 	public static String companyList= "xpath://select[@name='customerCompanyId']";
-	public static String = "xpath:";
-	public static String = "xpath:";
-	public static String = "xpath:";
-	public static String = "xpath:";
-	public static String = "xpath:";
-	public static String = "xpath:";
 	
 	// public static String = "xpath:";
 
