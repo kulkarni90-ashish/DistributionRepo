@@ -13,104 +13,103 @@ import distribution.library.AppLibrary;
 public class PurchaseOrderPage {
 	private AppLibrary appLibrary;
 	private WebDriver driver;
-	// public static String = "xpath:";
+	// public String = "xpath:";
 
-	public static String POMenu = "xpath://a[@href='/inventory/po']";
-	public static String addPOButton = "xpath://button[@data-title='New PO']";
-	public static String vendorList = "xpath://div[strong[text()='Select Vendor ']]//select";
-	public static String companyLicenseList = "xpath://tr[td[text()='Company License #']]//select";
-	public static String companyTypeField = "xpath://tr[td[text()='Company Type']]//input";
-	public static String shopLicenseField = "xpath://tr[td[text()='Shop License #']]//input";
-	public static String termList = "xpath://tr[td[text()='Term']]//select";
-	public static String paymentTypeList = "xpath://tr[td[text()='Payment Type']]//select";
-	public static String taxTypeField = "xpath://tr[td[text()='Tax Transaction Type']]//input";
-	public static String PODateField = "name:purchaseOrderDate";
-	public static String deliveryDateField = "name:deliveryDate";
-	public static String deliveryAddressField = "xpath://tr[td[text()='Delivery Address']]//td[2]";
-	public static String contactNumberField = "xpath://tr[td[text()='Contact Phone #']]//td[2]";
-	public static String addProductbutton = "xpath://button[text()='+ Add Products']";
+	public String POMenu = "xpath://a[@href='/inventory/po']";
+	public String addPOButton = "xpath://button[@data-title='New PO']";
+	public String vendorList = "xpath://div[strong[text()='Select Vendor ']]//select";
+	public String companyLicenseList = "xpath://tr[td[text()='Company License #']]//select";
+	public String companyTypeField = "xpath://tr[td[text()='Company Type']]//input";
+	public String shopLicenseField = "xpath://tr[td[text()='Shop License #']]//input";
+	public String termList = "xpath://tr[td[text()='Term']]//select";
+	public String paymentTypeList = "xpath://tr[td[text()='Payment Type']]//select";
+	public String taxTypeField = "xpath://tr[td[text()='Tax Transaction Type']]//input";
+	public String PODateField = "name:purchaseOrderDate";
+	public String deliveryDateField = "name:deliveryDate";
+	public String deliveryAddressField = "xpath://tr[td[text()='Delivery Address']]//td[2]";
+	public String contactNumberField = "xpath://tr[td[text()='Contact Phone #']]//td[2]";
+	public String addProductbutton = "xpath://button[text()='+ Add Products']";
 
 	// Product Details
-	public static String productSearchField = "xpath://table[thead]//div[contains(@id,'react-select-')]";
-	public static String productQuantityField = "xpath:(//input[@placeholder='Qty'])[1]";
-	public static String productUnitPriceField = "xpath:(//input[@placeholder='Unit Price'])[1]";
-	public static String productDiscountField = "xpath:(//input[@placeholder='Discount'])[1]";
-	public static String productSaveButton = "xpath:(//button[text()='Save'])[1]";
+	public String productSearchField = "xpath://table[thead]//div[contains(@id,'react-select-')]";
+	public String productQuantityField = "xpath:(//input[@placeholder='Qty'])[1]";
+	public String productUnitPriceField = "xpath:(//input[@placeholder='Unit Price'])[1]";
+	public String productDiscountField = "xpath:(//input[@placeholder='Discount'])[1]";
+	public String productSaveButton = "xpath:(//td//button[text()='Save'])[1]";
 
-	public static String productName = "xpath://tr[td[text()='1']]//a//span";
-	public static String tableRow = "xpath://table[contains(@class,'table-condensed')]//tr[td[text()='1']]";
-	public static String tbody = "xpath://table[contains(@class,'table-condensed')]//tbody//tr";
-	public static String productSubtotal = "xpath://div[span[text()='Sub Total : $']]";
+	public String tableRow = "xpath://table[contains(@class,'table-condensed')]//tr[td[text()='index']]";
+	public String rowCount = "xpath://table[contains(@class,'table-condensed')]//tbody//tr";
+	public String productSubtotal = "xpath://div[span[text()='Sub Total : $']]";
 
 	// Receiving Shipping for Purchase
-	public static String tbody1 = "xpath://div[@class='table-responsive']//tbody";
-	public static String tableRow1 = "xpath://div[@class='table-responsive']//tbody//tr";
-	public static String actualReceived = "xpath://div[@class='table-responsive']//tr//td[span]//input";
-	public static String batchStatusList = "xpath://div[@class='table-responsive']//tr//td//select";
-	public static String productDeclineReason = "name:productDeclineReason";
-	public static String productDeclinedMessage = "xpath://div[text()='success ! Declined Product successfully']";
+	public String tbody1 = "xpath://div[@class='table-responsive']//tbody";
+	public String tableRow1 = "xpath://div[@class='table-responsive']//tbody//tr";
+	public String actualReceived = "xpath://div[@class='table-responsive']//tr//td[span]//input";
+	public String batchStatusList = "xpath://div[@class='table-responsive']//tr//td//select";
+	public String productDeclineReason = "name:productDeclineReason";
+	public String productDeclinedMessage = "xpath://div[text()='success ! Declined Product successfully']";
 
-	public static String createPOButton = "xpath:(//button[text()='Create & Submit for Approval'])[1]";
-	public static String poSubmitSuccessMessage = "xpath://div[text()='success ! Submitted PO successfully']";
+	public String createPOButton = "xpath:(//button[text()='Create & Submit for Approval'])[1]";
+	public String poSubmitSuccessMessage = "xpath://div[text()='success ! Submitted PO successfully']";
 
-	public static String filterList = "xpath://table[thead]//div[contains(@id,'react-select-')]";
+	public String filterList = "xpath://table[thead]//div[contains(@id,'react-select-')]";
 
 	// Buttons
-	public static String printPOButton = "xpath://button[text()='Print']";
-	public static String archivePOButton = "xpath://button[text()='Archive']";
-	public static String declinePOButton = "xpath://button[text()='Decline']";
-	public static String cancelPOButton = "xpath://button[text()='Cancel PO']";
-	public static String moveToIPButton = "xpath://button[text()='Move to In Progress']";
-	public static String confirmationModal = "class:modal-content";
-	public static String pinInputField = "name:Pin";
-	public static String submitButton = "xpath://button[text()='Submit']";
-	public static String submitForApprovalButton = "xpath://button[text()='Submit for approval']";
-	public static String poApproveButton = "xpath://button[text()='Approve']";
-	public static String emailPOButton = "xpath://button[text()='Email PO']";
-	public static String editPOButton = "xpath://button[text()='Edit PO']";
-	public static String submitPinButton = "xpath://button[text()='Pin']";
-	public static String poApproveSuccessMessage = "xpath://div[text()='success ! Approved PO successfully']";
-	public static String submitWithoutPinFailureMsg = "xpath://div[text()='error ! Please enter pin']";
-	public static String enterInvalidPinFailureMsg = "xpath://div[text()='error ! Invalid pin.']";
+	public String printPOButton = "xpath://button[text()='Print']";
+	public String archivePOButton = "xpath://button[text()='Archive']";
+	public String declinePOButton = "xpath://button[text()='Decline']";
+	public String cancelPOButton = "xpath://button[text()='Cancel PO']";
+	public String moveToIPButton = "xpath://button[text()='Move to In Progress']";
+	public String confirmationModal = "class:modal-content";
+	public String pinInputField = "name:Pin";
+	public String submitButton = "xpath://button[text()='Submit']";
+	public String submitForApprovalButton = "xpath://button[text()='Submit for approval']";
+	public String poApproveButton = "xpath://button[text()='Approve']";
+	public String emailPOButton = "xpath://button[text()='Email PO']";
+	public String editPOButton = "xpath://button[text()='Edit PO']";
+	public String submitPinButton = "xpath://button[text()='Pin']";
+	public String poApproveSuccessMessage = "xpath://div[text()='success ! Approved PO successfully']";
+	public String submitWithoutPinFailureMsg = "xpath://div[text()='error ! Please enter pin']";
+	public String enterInvalidPinFailureMsg = "xpath://div[text()='error ! Invalid pin.']";
 
-	public static String markAsWaitingbutton = "xpath://button[text()='Mark as waiting']";
+	public String markAsWaitingbutton = "xpath://button[text()='Mark as waiting']";
 
 	// modal message
 	// submitButton
 	// poSubmitSuccessMessage
 	// receive Shioment
-	public static String receiveShipmentButton = "xpath://button[text()='Receive Shipment']";
+	public String receiveShipmentButton = "xpath://button[text()='Receive Shipment']";
 	// poSubmitSuccessMessage
-	public static String acceptItemButton = "xpath://button[text()='Accept']";
+	public String acceptItemButton = "xpath://button[text()='Accept']";
 	// poSubmitSuccessMessage
-	public static String acceptAllButton = "xpath://button[text()='Accept All']";
-	public static String acceptAllSuccessMessage = "xpath://div[text()='success ! Accepted all products successfully']";
+	public String acceptAllButton = "xpath://button[text()='Accept All']";
+	public String acceptAllSuccessMessage = "xpath://div[text()='success ! Accepted all products successfully']";
 	// poSubmitSuccessMessage
 
-	public static String completePOButton = "xpath://button[text()='Complete']";
+	public String completePOButton = "xpath://button[text()='Complete']";
 	// modal message
 	// completePOButton
-	public static String confirmationButton = "xpath://div[@class='modal-content']//button[text()='Complete']";
+	public String confirmationButton = "xpath://div[@class='modal-content']//button[text()='Complete']";
 
 	// Created PO details
-	public static String vPONumber = "xpath://h3[@class='fg-black']";
-	public static String vCreatedDate = "xpath://tr[td[text()='PO Created Date']]";
-	public static String vStatus = "xpath://tr[td[text()='PO Status']]";
-	public static String vTermType = "xpath://tr[td[text()='Term']]";
-	public static String vTotalAmount = "xpath://tr[td[text()='Total Amount']]";
-	public static String vPayment = "xpath://tr[td[text()='Payment']]";
-	public static String vDeliveryDate = "xpath://tr[td[text()='Delivery Date']]";
-	public static String vPODate = "xpath://tr[td[text()='Purchase Order Date']]";
-	public static String vSubTotl = "xpath://tr[td[text()='Sub Total ']]";
-	public static String vTotalDue = "xpath://tr[td//b[text()='Total Due ']]";
+	public String vPONumber = "xpath://h3[@class='fg-black']";
+	public String vCreatedDate = "xpath://tr[td[text()='PO Created Date']]";
+	public String vStatus = "xpath://tr[td[text()='PO Status']]";
+	public String vTermType = "xpath://tr[td[text()='Term']]";
+	public String vTotalAmount = "xpath://tr[td[text()='Total Amount']]";
+	public String vPayment = "xpath://tr[td[text()='Payment']]";
+	public String vDeliveryDate = "xpath://tr[td[text()='Delivery Date']]";
+	public String vPODate = "xpath://tr[td[text()='Purchase Order Date']]";
+	public String vSubTotl = "xpath://tr[td[text()='Sub Total ']]";
+	public String vTotalDue = "xpath://tr[td//b[text()='Total Due ']]";
 
 	// Receiving Shipmet
-	public static String vReceiveShiomentHeader = "xpath://div[@class='rubix-panel-header']//h4";
-	public static String vreceiveShipmentDate = "xpath://div[@class='hidden-print']";
-	// public static String = "xpath:";
-	// public static String = "xpath:";
-	// public static String = "xpath:";
-	// public static String = "xpath:";
+	public String vReceiveShiomentHeader = "xpath://div[@class='rubix-panel-header']//h4";
+	public String vreceiveShipmentDate = "xpath://div[@class='hidden-print']";
+	// public String = "xpath:";
+	// public String = "xpath:";
+	// public String = "xpath:";
+	// public String = "xpath:";
 
 	public PurchaseOrderPage(AppLibrary appLibrary) {
 		super();
@@ -146,7 +145,7 @@ public class PurchaseOrderPage {
 		AppLibrary.enterText(driver, productUnitPriceField, price);
 		AppLibrary.clickElement(driver, productSaveButton);
 		AppLibrary.sleep(2000);
-		verifyProductDetails(driver, quantity, price, productName);
+		verifyProductDetails(driver, quantity, price, productName, "po");
 
 		// Save PO
 		AppLibrary.clickElement(driver, createPOButton);
@@ -279,7 +278,7 @@ public class PurchaseOrderPage {
 		}
 	}
 
-	public static void selectProduct(WebDriver driver, String locator, String productName) throws Exception {
+	public void selectProduct(WebDriver driver, String locator, String productName) throws Exception {
 
 		String filterCriteria = productName.substring(0, 6);
 		System.out.println(filterCriteria + "     " + productName);
@@ -316,21 +315,29 @@ public class PurchaseOrderPage {
 		return s;
 	}
 
-	public void verifyProductDetails(WebDriver driver, String quantity, String price, String productName) {
-		List<WebElement> rows = AppLibrary.findElements(driver, tbody);
+	public void verifyProductDetails(WebDriver driver, String quantity, String price, String productName,
+			String input) {
+		List<WebElement> rows = AppLibrary.findElements(driver, rowCount);
 		int count = rows.size();
 		System.out.println(count);
 
-		for (int i = 0; i < count; i++) {
-			System.out.println(AppLibrary.findElement(driver, tableRow).getText());
-			Assert.assertTrue(AppLibrary.findElement(driver, tableRow).getText().contains(productName));
-			Assert.assertTrue(AppLibrary.findElement(driver, tableRow).getText().contains(quantity + " units"));
-			Assert.assertTrue(AppLibrary.findElement(driver, tableRow).getText().contains("$" + price));
+		for (int i = 1; i <= count; i++) {
+			String ind = String.valueOf(i);
+			System.out.println(AppLibrary.findElement(driver, tableRow.replace("index", ind)).getText());
 			Assert.assertTrue(
-					AppLibrary.findElement(driver, tableRow).getText().contains("$" + totalQuantity(quantity, price)));
+					AppLibrary.findElement(driver, tableRow.replace("index", ind)).getText().contains(productName));
+			Assert.assertTrue(AppLibrary.findElement(driver, tableRow.replace("index", ind)).getText()
+					.contains(quantity + " units"));
+			Assert.assertTrue(
+					AppLibrary.findElement(driver, tableRow.replace("index", ind)).getText().contains("$" + price));
+			Assert.assertTrue(AppLibrary.findElement(driver, tableRow.replace("index", ind)).getText()
+					.contains("$" + totalQuantity(quantity, price)));
+			if(input.contains("po"))
 			Assert.assertTrue(
 					AppLibrary.findElement(driver, productSubtotal).getText().contains(totalQuantity(quantity, price)));
-
+			else
+				Assert.assertTrue(
+						AppLibrary.findElement(driver, tableRow.replace("index", ind)).getText().contains(totalQuantity(quantity, price)));
 		}
 	}
 }

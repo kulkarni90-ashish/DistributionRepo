@@ -1,5 +1,8 @@
 package distribution.regression;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -13,12 +16,13 @@ public class InvoiceCreation extends TestBase {
 
 	@DataProvider(name = "AccountDetails")
 	public String[][] getAccountDetailsFromExcel() throws Exception {
-		String str[][] = AppLibrary.readExcel("TestData/CompanyDetails.xls");
+		String str[][] = AppLibrary.readExcel("TestData/PO_INV_Products.xls");
 		return str;
 	}
 
 	@BeforeClass
 	public void setUp() throws Exception {
+			
 		appLibrary = new AppLibrary();
 		System.out.println("TEST STARTS");
 		driver = appLibrary.getDriverInstance();
@@ -31,17 +35,12 @@ public class InvoiceCreation extends TestBase {
 	}
 
 	@Test(dataProvider = "AccountDetails")
-	public void createCompany(String id, String companyName, String firstName, String licenseNumber, String lastName,
-			String entityTaxType, String phone, String vendorType, String licenceType, String companyType,
-			String website, String fax, String vendorAddress, String vendorCity, String vendorZipCode,
-			String vendorState, String exeIndicator) throws Exception {
+	public void createCompany(String id, String product, String quantity, String unitPrice, String companyName,
+			String licenseNumber, String term, String payType, String exeIndicator) throws Exception {
 
 		InvoicePage ip = new InvoicePage(appLibrary);
-
 		ip.navigateToInvoice(driver);
-
-		ip.createInvoice(driver, "THC Labs LLC", "Net 30", "Lic_MH31NBOSCO", "Michael Brown", "NC_Panda Key Box Battery", "10", "10");
+		ip.createInvoice(driver, companyName, licenseNumber, term, payType, "Michael Brown", product, quantity, unitPrice);
 
 	}
-
 }

@@ -28,14 +28,14 @@ public class PurchaseOrderTest extends TestBase {
 	}
 
 	@Test(dataProvider = "POProductDetails")
-	public void createPO(String id, String name, String quantity, String unitPrice, String companyName,
+	public void createPO(String id, String product, String quantity, String unitPrice, String companyName,
 			String licenseNumber, String term, String payType, String exeIndicator) throws Exception {
 		PurchaseOrderPage pop = new PurchaseOrderPage(appLibrary);
 		pop.navigateToPO(driver);
 		String poNumber = pop.createPO(driver, companyName, licenseNumber, term, payType, AppLibrary.getDatePO(),
-				AppLibrary.getDatePO(), name, quantity, unitPrice);
+				AppLibrary.getDatePO(), product, quantity, unitPrice);
 
 		pop.receivePO(driver, poNumber, companyName, licenseNumber, term, payType, AppLibrary.getDatePO(),
-				AppLibrary.getDatePO(), name, quantity, unitPrice);
+				AppLibrary.getDatePO(), product, quantity, unitPrice);
 	}
 }

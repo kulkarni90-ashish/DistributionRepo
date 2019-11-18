@@ -32,7 +32,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -342,11 +341,11 @@ public class AppLibrary {
 				driver = new SafariDriver();
 			}
 
-			else {
-
-				System.setProperty("webdriver.firefox.profile", "default");
-				driver = new FirefoxDriver();
-			}
+//			else {
+//
+//				System.setProperty("webdriver.firefox.profile", "default");
+//				driver = new FirefoxDriver();
+//			}
 
 		}
 
@@ -1232,8 +1231,6 @@ public class AppLibrary {
 		System.out.println(dateFormat.format(date));
 		return dateFormat.format(date);
 	}
-	
-	
 
 	public static void waitUntilElementDisplayed(WebDriver driver, String locatorString) {
 
